@@ -1,5 +1,4 @@
-'use strict';
-
+"use strict";
 
 const addEventOnElem = function (elem, type, callback) {
   if (elem.length > 1) {
@@ -9,7 +8,7 @@ const addEventOnElem = function (elem, type, callback) {
   } else {
     elem.addEventListener(type, callback);
   }
-}
+};
 
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
@@ -20,7 +19,7 @@ const toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
   document.body.classList.toggle("active");
-}
+};
 
 addEventOnElem(navTogglers, "click", toggleNavbar);
 
@@ -28,10 +27,9 @@ const closeNavbar = function () {
   navbar.classList.remove("active");
   overlay.classList.remove("active");
   document.body.classList.remove("active");
-}
+};
 
 addEventOnElem(navbarLinks, "click", closeNavbar);
-
 
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
@@ -44,6 +42,6 @@ const activeElemOnScroll = function () {
     header.classList.remove("active");
     backTopBtn.classList.remove("active");
   }
-}
+};
 
 addEventOnElem(window, "scroll", activeElemOnScroll);
